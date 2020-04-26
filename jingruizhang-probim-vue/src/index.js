@@ -1,8 +1,10 @@
 
 import sumFunction from './myPlugin/sumFunction'
+import zwebsocketFunction from './myPlugin/zwebsocket'
 
 const components = [
-    sumFunction
+    sumFunction,
+    zwebsocketFunction
 ];
 
 //script标签方式映入
@@ -22,5 +24,6 @@ const install = function(Vue, opts = {}) {
     //总体
     install,
     //支持按需引入
-    sumFunction
+    sumFunction,
+    zwebsocketFunction
   }
