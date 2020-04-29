@@ -1,14 +1,48 @@
 <template>
   <div id="app">
-    <h2>calculate</h2>
-    <sum-function :num1="num1" :num2="num2" v-on:getSumFromChild="receiveChildSum"></sum-function>
-    
-    <p>从子组件获取到的值：{{sumFromChild}}</p>
+
+    <!-- 测试对话框组件 -->
+    <zdialog-function
+      :init_title="'对话框标题'"
+      :init_zindex="2"
+      :init_innerWidth="undefined"
+      :debugmode="true"
+      @onclose=""
+    >
+      <!-- 主体部分内容 -->
+      <div slot="mainslot">
+        abc
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+      </div>
+      <!-- //主体部分内容 -->
+
+      <!-- 按钮部分 -->
+      <div slot="buttonslot">
+        <zbutton-function
+          :init_text="'确定'"
+          :init_fontsize="14"
+          :debugmode="true"
+          @onclick=""
+          >
+        </zbutton-function>
+      </div>
+      <!-- //按钮部分 -->
+
+    </zdialog-function>
+    <!-- //测试对话框组件 -->
+   
   </div>
 </template>
 
 <script>
 import sumFunction from './myPlugin/sumFunction/sum-function'; // 引入
+import zdialogFunction from './myPlugin/zdialog/zdialog-function';
+import zbuttonFunction from './myPlugin/zbutton/zbutton-function';
 export default {
   name: 'app',
   data () {
@@ -19,7 +53,9 @@ export default {
     }
   },
   components:{ //注册插件
-    sumFunction
+    sumFunction,
+    zdialogFunction,
+    zbuttonFunction
   },
   methods:{
     receiveChildSum(sum){ //自定义事件，接收子组件的和
