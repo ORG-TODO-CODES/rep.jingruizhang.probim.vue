@@ -159,6 +159,13 @@ export default {
     },
     methods:{
 
+        // 子按钮点击
+        // ---------
+        _itemclick(ev, item) {
+            var _this = this;
+            _this.$emit("onclick", item);
+        },
+
         //
         _onclick(ev){
             var _this = this;
