@@ -37,9 +37,23 @@
         :init_height="undefined"
         :debugmode="true"
         >
-
         </zprogressbar-function>
         <!-- //进度条 -->
+
+        <!-- 按钮 -->
+         <zbutton-function
+          :init_text="'确定'"
+          :init_fontsize="14"
+          :debugmode="true"
+          :init_height="undefined"
+          :init_width="undefined"
+          :init_ifchildren="[{'text':'ABC', 'sign':'abc', 'iconclass':'icon-test1'}
+          
+          ]"
+          @onclick=""
+          >
+        </zbutton-function>
+        <!-- //按钮 -->
 
         <br />
         <br />
@@ -48,13 +62,13 @@
 
       <!-- 按钮部分 -->
       <div slot="buttonslot">
-        <zbutton-function
+        <!-- <zbutton-function
           :init_text="'确定'"
           :init_fontsize="14"
           :debugmode="true"
           @onclick=""
           >
-        </zbutton-function>
+        </zbutton-function> -->
       </div>
       <!-- //按钮部分 -->
 
