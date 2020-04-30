@@ -3,7 +3,7 @@
         :style="getZdialogAllStyle()"
     >
         <div 
-        id="id_jingruizhang_probim_vue_zdialog_inner"
+        :id="init_id"
         class="jingruizhang-probim-vue css-zdialog-inner" 
             v-zdrag="greet"
             :style="getZdialogInnerStyle()"
@@ -58,6 +58,13 @@ export default {
             type:Boolean,
             required:false,
             default: false
+        },
+
+        // id
+        init_id:{
+            type: String,
+            required:false,
+            default:'id_jingruizhang_probim_vue_zdialog_inner'
         },
         
         // 对话框标题
@@ -138,7 +145,8 @@ export default {
 
             // 设置 _this.style
             // ----------------
-            var dom = document.getElementById("id_jingruizhang_probim_vue_zdialog_inner");
+            var id = _this.init_id;
+            var dom = document.getElementById(id);
             var height = dom.offsetHeight;
             var width = dom.offsetWidth;
 //             left: "calc(50% - 348px / 2)"

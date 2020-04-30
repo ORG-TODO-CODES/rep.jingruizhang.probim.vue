@@ -124,7 +124,7 @@ export default {
         init_ifchildren:{
             type: Array,
             required:false,
-            default:[]
+            default:()=>[]
         },
 
         //
