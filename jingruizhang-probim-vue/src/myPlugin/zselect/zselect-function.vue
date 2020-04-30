@@ -159,6 +159,7 @@ export default {
         // 中断
         // ----
         if (_this.debugmode) {
+            window.zselectfunctionvue = _this;
             console.log('in zselect-function debugger');
         }
 
@@ -167,6 +168,7 @@ export default {
         _this.items = _this.init_items;
         _this.width = _this.init_width;
         _this.height = _this.init_height;
+        _this.iconclass = _this.init_iconclass;
 
     },
     methods:{
@@ -218,6 +220,8 @@ export default {
 .jingruizhang-probim-vue.css-zselect-icon {
     width:24px;
     height:24px;
+    line-height: 24px;
+    text-align: center;
     position: absolute;
     right: 24px;
 }
