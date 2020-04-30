@@ -4,13 +4,15 @@ import zwebsocketFunction from './myPlugin/zwebsocket'
 import zdialogFunction from './myPlugin/zdialog'
 import zbuttonFunction from './myPlugin/zbutton'
 import zselectFunction from './myPlugin/zselect'
+import zprogressbarFunction from './myPlugin/zprogressbar'
 
 const components = [
     sumFunction,
     zwebsocketFunction,
     zdialogFunction,
     zbuttonFunction,
-    zselectFunction
+    zselectFunction,
+    zprogressbarFunction
 ];
 
 //script标签方式映入
@@ -34,5 +36,6 @@ const install = function(Vue, opts = {}) {
     zwebsocketFunction,
     zdialogFunction,
     zbuttonFunction,
-    zselectFunction
+    zselectFunction,
+    zprogressbarFunction
   }

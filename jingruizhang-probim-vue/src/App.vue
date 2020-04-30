@@ -6,6 +6,7 @@
       :init_title="'对话框标题'"
       :init_zindex="2"
       :init_innerWidth="undefined"
+      :init_width="undefined"
       :debugmode="true"
       @onclose=""
     >
@@ -23,12 +24,23 @@
         :init_listzindex="undefined"
         :init_iconclass="'icon-cc1'"
         placeholder="请选择"
-        :debugmode="true"
+        :debugmode="false"
         ></zselect-function>
         <!-- //下拉框 -->
 
         <br />
         <br />
+
+        <!-- 进度条 -->
+        <zprogressbar-function
+        :init_width="'210px'"
+        :init_height="undefined"
+        :debugmode="true"
+        >
+
+        </zprogressbar-function>
+        <!-- //进度条 -->
+
         <br />
         <br />
       </div>
@@ -57,8 +69,16 @@ import sumFunction from './myPlugin/sumFunction/sum-function'; // 引入
 import zdialogFunction from './myPlugin/zdialog/zdialog-function';
 import zbuttonFunction from './myPlugin/zbutton/zbutton-function';
 import zselectFunction from './myPlugin/zselect/zselect-function';
+import zprogressbarFunction from './myPlugin/zprogressbar/zprogressbar-function';
 export default {
   name: 'app',
+  components:{ //注册插件
+    sumFunction,
+    zdialogFunction,
+    zbuttonFunction,
+    zselectFunction,
+    zprogressbarFunction
+  },
   data () {
     return {
       num1: 4,
@@ -92,12 +112,6 @@ export default {
         }
       ]
     }
-  },
-  components:{ //注册插件
-    sumFunction,
-    zdialogFunction,
-    zbuttonFunction,
-    zselectFunction
   },
   methods:{
     receiveChildSum(sum){ //自定义事件，接收子组件的和
