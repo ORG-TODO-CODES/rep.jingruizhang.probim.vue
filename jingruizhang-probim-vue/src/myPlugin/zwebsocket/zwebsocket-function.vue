@@ -3,7 +3,7 @@
 </template>
 <script>
 export default {
-    name:'zwebsocket',
+    name:'zwebsocket-function',
     data(){
         return {
             url:'',

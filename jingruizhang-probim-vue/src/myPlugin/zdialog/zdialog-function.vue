@@ -35,7 +35,7 @@
 </template>
 <script>
 export default {
-    name:'zdialog',
+    name:'zdialog-function',
     data(){
         return {
             val:'123',  // drag

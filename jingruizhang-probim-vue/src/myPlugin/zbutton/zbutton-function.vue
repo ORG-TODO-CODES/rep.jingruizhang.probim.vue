@@ -8,7 +8,7 @@
 </template>
 <script>
 export default {
-    name:'zbutton',
+    name:'zbutton-function',
     data(){
         return {
         };
