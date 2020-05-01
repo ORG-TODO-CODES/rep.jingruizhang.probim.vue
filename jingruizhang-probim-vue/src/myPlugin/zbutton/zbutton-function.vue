@@ -3,7 +3,7 @@
         :style="getZbuttonAllStyle()"
         @click="_onclick($event)"
     >
-        <div class="css-zbutton-textname">{{init_text}}</div>
+        <div class="jingruizhang-probim-vue css-zbutton-textname">{{init_text}}</div>
 
         <!-- 下拉部分 -->
         <div 
