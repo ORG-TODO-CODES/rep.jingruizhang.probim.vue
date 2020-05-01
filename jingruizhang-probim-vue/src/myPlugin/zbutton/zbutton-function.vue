@@ -3,7 +3,7 @@
         :style="getZbuttonAllStyle()"
         @click="_onclick($event)"
     >
-        {{init_text}}
+        <div class="css-zbutton-textname">{{init_text}}</div>
 
         <!-- 下拉部分 -->
         <div 
@@ -207,7 +207,9 @@ export default {
 .jingruizhang-probim-vue.css-zbutton-all:hover{
     opacity: 1;
 }
-
+.jingruizhang-probim-vue.css-zbutton-textname{
+    text-align: center;
+}
 .jingruizhang-probim-vue.css-zbutton-body{
     position:absolute;
     top:calc(100% + 4px);
