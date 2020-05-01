@@ -170,6 +170,8 @@ export default {
         _this.height = _this.init_height;
         _this.iconclass = _this.init_iconclass;
 
+        _this.attrvalue = {};
+
     },
     methods:{
 
