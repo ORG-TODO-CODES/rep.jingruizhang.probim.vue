@@ -18,7 +18,7 @@
                 class="jingruizhang-probim-vue css-zbutton-item">
                 <div class="jingruizhang-probim-vue css-zbutton-iteminner">
                     <div 
-               
+                    v-if="item.iconclass"
                     class="jingruizhang-probim-vue css-zbutton-iteminner-icon" 
                     :class="item.iconclass"
                     ></div>
@@ -251,7 +251,7 @@ export default {
     color:rgba(0,0,0,0.85);
     font-size: 14px;
     height:100%;
-    margin-right: 24px;
+    /* margin-right: 24px; */
     text-align: center;
 }
 </style>
