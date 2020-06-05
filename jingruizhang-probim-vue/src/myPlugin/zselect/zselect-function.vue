@@ -49,6 +49,7 @@ export default {
     name:'zselect-function',
     data(){
         return {
+            m_debugmode: false,
             selectedItem:{ // 选中的数据
 
             },
@@ -95,8 +96,7 @@ export default {
         // -------
         debugmode:{
             type:Boolean,
-            required:false,
-            default: false
+            required:false
         },
 
         // 无值显示
@@ -159,7 +159,8 @@ export default {
         // 中断
         // ----
         console.log('in zselect-function.vue 161');
-        if (_this.debugmode) {
+        _this.m_debugmode = _this.debugmode;
+        if (_this.m_debugmode) {
             window.zselectfunctionvue = _this;
             console.log('in zselect-function debugger');
         }
