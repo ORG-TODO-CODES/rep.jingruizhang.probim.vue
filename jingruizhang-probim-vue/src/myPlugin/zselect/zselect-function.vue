@@ -198,7 +198,7 @@ export default {
         _itemclick(ev, item){
             var _this = this;
             _this.selectedItem = item;
-            _this.$emit("itemclick", ev, item);
+            _this.$emit("itemclick", item);// $parent.$emit?
             _this.isOpen = false;
         },
         _bodyclick(ev){
