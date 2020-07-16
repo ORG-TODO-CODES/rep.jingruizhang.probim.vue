@@ -188,6 +188,11 @@ export default {
             return false;
         },
 
+        setIsOpen(val) {
+            var _this = this;
+            _this.isOpen = !!val;
+        },
+
         // 设置值
         // ------
         setvalue(item){
