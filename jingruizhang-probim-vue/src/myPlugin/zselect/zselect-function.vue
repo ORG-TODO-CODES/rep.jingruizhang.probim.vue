@@ -5,7 +5,9 @@
         <!-- 本体 -->
         <div
         @click="_bodyclick($event)"
-         class="jingruizhang-probim-vue css-zselect-text-line">
+         class="jingruizhang-probim-vue css-zselect-text-line"
+         :class="{'css-dis': m_disabled}"
+         >
             <div class="jingruizhang-probim-vue css-zselect-text"
             :class="{'css-novalue':getIfNoValue()}"
             >
@@ -30,7 +32,9 @@
                 v-for="item in items"
                 :key="item.value"
                 class="jingruizhang-probim-vue css-zselect-item">
-                <div class="jingruizhang-probim-vue css-zselect-iteminner">
+                <div class="jingruizhang-probim-vue css-zselect-iteminner"
+                :class="{'css-dis': m_disabled}"
+                >
                     <div 
                
                     class="jingruizhang-probim-vue css-zselect-iteminner-icon" 
@@ -49,6 +53,10 @@ export default {
     name:'zselect-function',
     data(){
         return {
+            // 是否已禁用
+            // ---------
+            m_disabled: undefined,
+
             m_debugmode: false,
             selectedItem:{ // 选中的数据
 
@@ -193,6 +201,12 @@ export default {
             _this.isOpen = !!val;
         },
 
+        setIsdisabled(val) {
+            var _this = this;
+            _this.m_disabled = !!val;
+            _this.isOpen = false;
+        },
+
         // 设置值
         // ------
         setvalue(item){
@@ -202,12 +216,16 @@ export default {
 
         _itemclick(ev, item){
             var _this = this;
+           
             _this.selectedItem = item;
             _this.$emit("itemclick", item);// $parent.$emit?
             _this.isOpen = false;
         },
         _bodyclick(ev){
             var _this = this;
+             if (_this.m_disabled) {
+                return;
+            }
             if (_this.isOpen) {
                 _this.isOpen = false;
             } else {
@@ -243,6 +261,13 @@ export default {
     padding:0 28px 0 28px;
     box-sizing: border-box;
 }
+
+.jingruizhang-probim-vue.css-zselect-text-line.css-dis{
+    cursor: not-allowed;
+    background-color: #f5f7fa;
+    color: #c0c4cc;
+}
+
 .jingruizhang-probim-vue.css-zselect-body{
     position:absolute;
     top:calc(100% + 4px);
@@ -272,6 +297,12 @@ export default {
 .jingruizhang-probim-vue.css-zselect-iteminner:hover{
     background-color: rgba(0,0,0,0.04);
     cursor:pointer;
+}
+
+.jingruizhang-probim-vue.css-zselect-iteminner.css-dis:hover{
+    background-color: #f5f7fa;
+    color: #c0c4cc;
+    cursor: not-allowed;
 }
 
 .jingruizhang-probim-vue.css-zselect-iteminner-icon{
