@@ -254,6 +254,15 @@ export default {
     position: absolute;
     right: 24px;
 }
+
+.jingruizhang-probim-vue.css-zselect-text{
+    text-align: left;
+    white-space: nowrap;
+    overflow-x: hidden;
+    text-overflow: ellipsis;
+    width: calc(100% - 28px);
+}
+
 .jingruizhang-probim-vue.css-zselect-text-line{
     width:100%;
     height:100%;
