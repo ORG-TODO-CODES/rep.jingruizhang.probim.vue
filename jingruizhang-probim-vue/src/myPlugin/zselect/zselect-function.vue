@@ -40,7 +40,9 @@
                     class="jingruizhang-probim-vue css-zselect-iteminner-icon" 
                     :class="item.iconclass"
                     ></div>
-                    <div class="jingruizhang-probim-vue css-zselect-iteminner-text" >{{item.text}}</div>
+                    <div 
+                    :title="item.text"
+                    class="jingruizhang-probim-vue css-zselect-iteminner-text" >{{item.text}}</div>
                 </div>
             </div>
         </div>
@@ -316,6 +318,9 @@ export default {
     font-size: 14px;
     height:100%;
     text-align: left;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow-x: hidden;
 }
 
 .jingruizhang-probim-vue.css-novalue{
