@@ -11,9 +11,18 @@
             <!-- 对话框的标题（及右上角的关闭按钮） -->
             <div 
             class="jingruizhang-probim-vue css-zdialog-title" >
-                <div class="jingruizhang-probim-vue css-zdialog-titlelabel" >
+
+
+                <div
+                v-if="!init_usecustomtitlearea"
+                 class="jingruizhang-probim-vue css-zdialog-titlelabel" >
                     {{title}}
                 </div>
+                <slot 
+                v-else
+                name="customtitlearea"></slot>
+
+
                 <div 
                 @click="close_click($event)"
                 class="jingruizhang-probim-vue css-zdialog-titleclosebtn"
@@ -93,6 +102,13 @@ export default {
         // ---------------------
         init_closebtniconfontclass:{
             type: String,
+            required:false
+        },
+
+        // 是否使用自定义的 title dom 元素
+        // -----------------------------
+        init_usecustomtitlearea: {
+            type: Boolean,
             required:false
         }
 
