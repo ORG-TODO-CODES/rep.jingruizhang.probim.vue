@@ -152,7 +152,7 @@ export default {
         // 中断
         // ----
         if (_this.debugmode) {
-            console.log('in zbutton-function debugger');
+            //console.log('in zbutton-function debugger');
         }
         
 

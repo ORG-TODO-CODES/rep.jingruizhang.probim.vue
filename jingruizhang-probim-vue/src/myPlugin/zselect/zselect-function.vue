@@ -168,7 +168,7 @@ export default {
 
         // 中断
         // ----
-        console.log('in zselect-function.vue 161');
+        //console.log('in zselect-function.vue 161');
         _this.m_debugmode = _this.debugmode;
         if (_this.m_debugmode) {
             window.zselectfunctionvue = _this;

@@ -154,7 +154,7 @@ export default {
         // 中断
         // ----
         if (_this.debugmode) {
-            console.log('in zdialog-function debugger');
+            //console.log('in zdialog-function debugger');
         }
 
         _this.$nextTick(()=>{
